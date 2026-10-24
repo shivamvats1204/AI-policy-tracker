@@ -36,7 +36,8 @@ def sidebar():
     with st.sidebar:
         st.markdown("### AI Policy Tracker")
         st.caption("INDIA · POLICY OBSERVATORY")
-        st.caption("Default event scope: " + ", ".join(TRACKED_STATES))
+        st.caption("Event scope for new processing: "
+                   + ("all Indian states" if st.session_state.get("all_states") else ", ".join(TRACKED_STATES)))
         st.divider()
         selected = st.selectbox("Dataset", [*choices, "Custom folders"], key="dataset")
         if selected == "Custom folders":
@@ -52,11 +53,15 @@ def sidebar():
         with st.expander("Update data"):
             st.caption("Process saved articles, or collect into a new run folder.")
             st.caption("New RSS collections fetch missing context for up to 10 promising articles per source. Saved runs can be enriched in batches of 30.")
+            all_states = st.toggle("Include all Indian states", key="all_states",
+                                   help="Off: keep only " + ", ".join(TRACKED_STATES)
+                                   + ". On: keep events from any Indian state. Applies to the actions below.")
+            scope = None if all_states else TRACKED_STATES
             if st.button("Process existing articles", disabled=demo or not (raw / "articles.jsonl").is_file(),
                          width="stretch", key="process"):
                 try:
                     with st.spinner("Processing articles…"):
-                        summary = run_pipeline(raw / "articles.jsonl", processed)
+                        summary = run_pipeline(raw / "articles.jsonl", processed, scope)
                     st.success(f"Processed: {summary['events']} events; {summary['excluded_articles']} excluded articles.")
                 except (OSError, ValueError) as exc:
                     st.error(str(exc))
@@ -80,14 +85,15 @@ def sidebar():
                          width="stretch", key="enrich"):
                 try:
                     with st.spinner("Fetching context for up to 30 promising RSS articles…"):
-                        summary = enrich_and_process(raw / "articles.jsonl", processed, 30, float(delay))
+                        summary = enrich_and_process(raw / "articles.jsonl", processed, 30, float(delay), scope)
                     st.success(f"Enriched {summary['enrichment']['fetched']} articles; exported {summary['events']} events.")
                 except (OSError, ValueError) as exc:
                     st.error(str(exc))
             if st.button("Collect and process", type="primary", disabled=demo, width="stretch", key="collect"):
                 try:
                     with st.spinner("Collecting sources and processing articles…"):
-                        run, summary = collect_and_process(project_path(config), int(limit), float(delay))
+                        run, summary = collect_and_process(project_path(config), int(limit), float(delay),
+                                                           tracked_states=scope)
                     st.session_state["pending_paths"] = (run / "raw", run / "processed")
                     st.session_state["notice"] = f"Collection complete: {summary['events']} events; {summary['excluded_articles']} excluded articles."
                     st.rerun()
@@ -224,9 +230,9 @@ def main():
                                   len(data["articles"]), len(data["excluded"]))):
         col.metric(label, value)
     st.caption("Counts describe the selected dataset. Events remain candidates until reviewed.")
-    scope = data["coverage"].get("tracked_states")
-    if scope:
-        st.caption("Dataset scope: " + ", ".join(scope))
+    if "tracked_states" in data["coverage"]:
+        scope = data["coverage"]["tracked_states"]
+        st.caption("Dataset scope: " + (", ".join(scope) if scope else "all Indian states"))
     tabs = st.tabs(["Events", "Excluded articles", "Validation & logs"])
     with tabs[0]:
         if data["publishable"] and not events and data["articles"]:

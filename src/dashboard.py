@@ -14,6 +14,7 @@ from .collect import Collector
 from .extract import web_url
 from .paths import PROJECT_ROOT
 from .pipeline import CSV_FIELDS, run_pipeline
+from .settings import TRACKED_STATES
 from .validate import validate_events
 
 
@@ -98,7 +99,8 @@ def csv_export(events: list[dict]) -> bytes:
 
 
 def collect_and_process(config: Path, limit: int, delay: float,
-                        runs_root: Path | None = None) -> tuple[Path, dict]:
+                        runs_root: Path | None = None,
+                        tracked_states=TRACKED_STATES) -> tuple[Path, dict]:
     sources = read_json(config, list, [])
     if not sources:
         raise ValueError("Choose a configuration containing a nonempty source array.")
@@ -118,5 +120,5 @@ def collect_and_process(config: Path, limit: int, delay: float,
         collector.session.close()
     if not records:
         raise ValueError(f"No articles collected. Review {run / 'raw' / 'fetch_log.jsonl'} for errors.")
-    summary = run_pipeline(run / "raw" / "articles.jsonl", run / "processed")
+    summary = run_pipeline(run / "raw" / "articles.jsonl", run / "processed", tracked_states)
     return run, summary

@@ -37,6 +37,23 @@ class NormalizationTests(unittest.TestCase):
         self.assertEqual(detect_states("Bengaluru is setting up an AI centre"), [])
         self.assertEqual(detect_states("UP government signs AI agreement"), ["Uttar Pradesh"])
 
+    def test_ambiguous_abbreviations_need_state_context(self):
+        cases = {
+            "local MP welcomes the Karnataka AI task force": ["Karnataka"],
+            "MP Avinash Reddy taken into preventive custody": [],
+            "MP's son booked after crash": [],
+            "AP reported that officials met": [],
+            "MP government signs MoU for AI": ["Madhya Pradesh"],
+            "AI centre of excellence in MP": ["Madhya Pradesh"],
+            "AP government launches AI portal": ["Andhra Pradesh"],
+            "Across AP, schools will get AI tutors": ["Andhra Pradesh"],
+            "AP, Telangana governments to set up AI university": ["Andhra Pradesh", "Telangana"],
+            "Telangana and AP cabinets approve AI policy": ["Andhra Pradesh", "Telangana"],
+        }
+        for text, expected in cases.items():
+            with self.subTest(text=text):
+                self.assertEqual(detect_states(text), expected)
+
     def test_multiple_states_are_not_assigned_one_state(self):
         record = normalize_article(fixture(title="Karnataka and Telangana approve AI missions"))
         self.assertEqual(record["state"], "")
@@ -177,6 +194,25 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(summary["excluded_articles"], 1)
             self.assertTrue((root / "out" / "ai_policy_events.csv").exists())
             self.assertEqual(len(json.loads((root / "out" / "event_sources.json").read_text())), 2)
+
+    def test_scope_defaults_to_tracked_states_and_can_include_all_states(self):
+        articles = [fixture(),
+                    fixture(article_id="k1", source_url="https://example.net/kerala",
+                            title="Kerala government approves AI mission",
+                            description="The Kerala government approved an artificial intelligence mission.")]
+        with tempfile.TemporaryDirectory(dir=PROJECT_ROOT) as directory:
+            root = Path(directory)
+            source = root / "input.jsonl"
+            source.write_text("\n".join(json.dumps(a) for a in articles), encoding="utf-8")
+            default = run_pipeline(source, root / "default")
+            everywhere = run_pipeline(source, root / "all", None)
+            self.assertEqual(default["events"], 1)
+            excluded = json.loads((root / "default" / "excluded.json").read_text())
+            self.assertEqual(excluded[0]["exclusion_reasons"], ["out_of_scope_state"])
+            self.assertEqual(everywhere["events"], 2)
+            states = {event["state"] for event in json.loads((root / "all" / "events.json").read_text())}
+            self.assertEqual(states, {"Karnataka", "Kerala"})
+            self.assertIsNone(json.loads((root / "all" / "coverage.json").read_text())["tracked_states"])
 
     def test_missing_date_is_preserved_as_warning(self):
         events, _ = deduplicate([process(published_at_raw="")])

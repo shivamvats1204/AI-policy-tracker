@@ -18,8 +18,8 @@ CATEGORY_RULES = (
 )
 CATEGORIES = {category for category, _ in CATEGORY_RULES}
 AI = re.compile(r"\b(?:AI|GenAI|artificial intelligence|machine learning|LLMs?)\b", re.I)
-GOVERNMENT = re.compile(r"\b(?:government|govt|cabinet|department|minister|secretary|state government|authority|police|municipal\w*|GHMC|TNeGA|ELCOT)\b", re.I)
-ACTION = re.compile(r"\b(?:announc\w*|approv\w*|launch\w*|sign\w*|establish\w*|deploy\w*|allocat\w*|constitut\w*|adopt\w*|implement\w*|propos\w*|cancel\w*|scrap\w*|withdraw\w*|unveil\w*|introduc\w*|set(?:ting)? up)\b", re.I)
+GOVERNMENT = re.compile(r"\b(?:governments?|govts?|cabinet|departments?|ministers?|secretary|state government|authorit(?:y|ies)|police|municipal\w*|GHMC|TNeGA|ELCOT)\b", re.I)
+ACTION = re.compile(r"\b(?:announc\w*|approv\w*|launch\w*|sign(?:s|ed|ing)?|establish\w*|deploy\w*|allocat\w*|constitut\w*|adopt\w*|implement\w*|propos\w*|cancel\w*|scrap\w*|withdraw\w*|unveil\w*|introduc\w*|set(?:ting)? up)\b", re.I)
 STATUS_RULES = (
     ("cancelled", r"\b(?:cancel\w*|scrap\w*|withdraw\w*)\b"),
     ("proposed", r"\b(?:propos\w*|plans? to|planning|consider\w*)\b"),

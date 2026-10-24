@@ -34,11 +34,35 @@ def normalize_state(value: str) -> str:
     return lookup.get(_key(value or ""), "")
 
 
+# "MP" (Member of Parliament) and "AP" (Associated Press) are common non-state words,
+# so they only count when the surrounding words show a state is meant.
+AMBIGUOUS_ABBREVIATIONS = frozenset({"mp", "ap"})
+_STATE_NAMES = "|".join(sorted((re.escape(state).replace(r"\ ", r"[\s-]+") for state in STATES),
+                               key=len, reverse=True))
+_STATE_WORDS = (r"(?:govt|government|governments|cabinet|police|assembly|CM|chief\s+minister|"
+                r"administration|department|state)")
+
+
+def _abbreviation_names_state(abbreviation: str, text: str) -> bool:
+    """Accept an ambiguous abbreviation only in state context, e.g. 'MP government'."""
+    patterns = (
+        rf"\b{abbreviation}\b(?=\s+(?i:{_STATE_WORDS})\b)",
+        rf"\b(?i:in|across|from|of)\s+{abbreviation}\b",
+        rf"\b{abbreviation}\b\s*(?:,|&|(?i:and))\s*(?i:{_STATE_NAMES})\b",
+        rf"\b(?i:{_STATE_NAMES})\s*(?:,|&|(?i:and))\s*{abbreviation}\b",
+    )
+    return any(re.search(pattern, text) for pattern in patterns)
+
+
 def detect_states(text: str) -> list[str]:
     """Detect explicit names; city names never establish the event's state."""
     found = {state for state in STATES
              if re.search(r"\b" + re.escape(state).replace(r"\ ", r"[\s-]+") + r"\b", text, re.I)}
     for alias, state in ALIASES.items():
+        if alias in AMBIGUOUS_ABBREVIATIONS:
+            if _abbreviation_names_state(alias.upper(), text):
+                found.add(state)
+            continue
         # Short aliases are case-sensitive: ordinary 'up' is not Uttar Pradesh.
         pattern = alias.upper() if len(alias) <= 3 else alias
         flags = 0 if len(alias) <= 3 else re.I

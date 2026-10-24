@@ -13,6 +13,7 @@ from streamlit.testing.v1 import AppTest
 from src.dashboard import collect_and_process, csv_export
 from src.paths import PROJECT_ROOT
 from src.pipeline import run_pipeline
+from src.settings import TRACKED_STATES
 from tests.test_pipeline import fixture
 
 
@@ -32,12 +33,13 @@ class DashboardTests(unittest.TestCase):
         at.session_state["processed_folder"] = str(self.processed)
         return at.run()
 
-    def populate(self):
+    def populate(self, extra=()):
         records = [fixture(), fixture(article_id="a2", source_url="https://example.net/coverage"),
                    fixture(article_id="a3", source_url="https://example.net/launch",
                            title="Karnataka government launches Bengaluru AI mission"),
                    fixture(article_id="a4", source_url="https://example.net/private",
-                           title="Private gadget review", description="Consumer electronics")]
+                           title="Private gadget review", description="Consumer electronics"),
+                   *extra]
         source = self.raw / "articles.jsonl"
         source.write_text("\n".join(json.dumps(record) for record in records), encoding="utf-8")
         run_pipeline(source, self.processed)
@@ -100,8 +102,48 @@ class DashboardTests(unittest.TestCase):
         with patch("src.enrich.enrich_and_process", return_value={"events": 2, "enrichment": {"fetched": 1}}) as action:
             at.button(key="enrich").click().run()
         self.assertFalse(at.exception)
-        action.assert_called_once_with(self.raw / "articles.jsonl", self.processed, 30, 2.0)
+        action.assert_called_once_with(self.raw / "articles.jsonl", self.processed, 30, 2.0, TRACKED_STATES)
         self.assertTrue(any("Enriched 1 articles" in notice.value for notice in at.success))
+
+    def test_enrichment_and_collection_honor_all_states_toggle(self):
+        self.populate()
+        at = self.app()
+        at.toggle(key="all_states").set_value(True).run()
+        with patch("src.enrich.enrich_and_process", return_value={"events": 2, "enrichment": {"fetched": 1}}) as action:
+            at.button(key="enrich").click().run()
+        action.assert_called_once_with(self.raw / "articles.jsonl", self.processed, 30, 2.0, None)
+        with patch("src.dashboard.collect_and_process", return_value=(self.root, {"events": 2, "excluded_articles": 1})) as action:
+            at.button(key="collect").click().run()
+        self.assertEqual(action.call_args.kwargs["tracked_states"], None)
+
+    def test_all_states_toggle_keeps_events_from_other_states(self):
+        self.populate(extra=[fixture(article_id="k1", source_url="https://example.net/kerala",
+                                     title="Kerala government approves AI mission",
+                                     description="The Kerala government approved an artificial intelligence mission.")])
+        at = self.app()
+        self.assertEqual([metric.value for metric in at.metric], ["2", "1", "5", "2"])
+        self.assertTrue(any("Karnataka, Telangana" in caption.value for caption in at.caption))
+        at.toggle(key="all_states").set_value(True).run()
+        at.button(key="process").click().run()
+        self.assertFalse(at.exception)
+        self.assertEqual([metric.value for metric in at.metric], ["3", "2", "5", "1"])
+        self.assertTrue(any("Dataset scope: all Indian states" in caption.value for caption in at.caption))
+        at.toggle(key="all_states").set_value(False).run()
+        at.button(key="process").click().run()
+        self.assertEqual(at.metric[0].value, "2")
+        self.assertTrue(any("Dataset scope: Karnataka" in caption.value for caption in at.caption))
+
+    def test_collect_and_process_passes_requested_scope(self):
+        config = self.root / "sources.json"
+        config.write_text(json.dumps([{"name": "Synthetic", "kind": "rss", "url": "https://example.org/feed"}]), encoding="utf-8")
+        calls = ((), (TRACKED_STATES,), (None,))
+        for extra in calls:
+            with self.subTest(scope=extra):
+                with patch("src.dashboard.Collector") as collector, \
+                        patch("src.dashboard.run_pipeline", return_value={"events": 0}) as pipeline:
+                    collector.return_value.run.return_value = [{"title": "synthetic"}]
+                    collect_and_process(config, 20, 2.0, self.root / "runs", *extra)
+                self.assertEqual(pipeline.call_args.args[2], extra[0] if extra else TRACKED_STATES)
 
     def test_collection_switches_to_new_run(self):
         self.populate()

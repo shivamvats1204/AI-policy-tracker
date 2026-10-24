@@ -16,6 +16,12 @@ from src.paths import PROJECT_ROOT
 from tests.test_pipeline import fixture
 
 
+BACKGROUND_FIXTURES = {
+    "T-AIM targets at training 30,000 people in AI",
+    "AI adoption major focus for Telangana: Jayesh Ranjan",
+}
+
+
 def classify(**values):
     return classify_article(normalize_article(fixture(**values)))
 
@@ -46,6 +52,13 @@ class EvidenceTests(unittest.TestCase):
         for example in examples:
             with self.subTest(title=example["title"]):
                 record = classify_article(normalize_article(example))
+                if example["title"] in BACKGROUND_FIXTURES:
+                    # An interview and a speech with no policy milestone: excluded on purpose,
+                    # but never for missing lead context.
+                    self.assertEqual(record["exclusion_reasons"], ["background_or_progress_report"])
+                    self.assertEqual(record["article_type"], "background")
+                    self.assertEqual(record["status"], "unknown")
+                    continue
                 self.assertTrue(record["included"], record["exclusion_reasons"])
                 self.assertEqual(record["review_status"], "needs_review")
                 self.assertTrue(record["classification_evidence"]["government"])
@@ -91,6 +104,34 @@ class EvidenceTests(unittest.TestCase):
                           body_text="Karnataka and Telangana governments announced AI missions.")
         self.assertEqual(record["state"], "")
         self.assertFalse(record["included"])
+
+    def test_member_of_parliament_does_not_add_a_second_state(self):
+        record = classify(title="Karnataka government launches AI task force; local MP welcomes move",
+                          description="")
+        self.assertEqual(record["state"], "Karnataka")
+        self.assertNotIn("multiple_states", record["normalization_issues"])
+        self.assertTrue(record["included"], record["exclusion_reasons"])
+
+    def test_significant_and_signal_are_not_action_verbs(self):
+        for title in ("Karnataka government statement on AI: significant concerns remain",
+                      "Karnataka government sees a signal of AI interest"):
+            with self.subTest(title=title):
+                record = classify(title=title, description="")
+                self.assertFalse(record["included"])
+                self.assertIn("missing_action_signal", record["exclusion_reasons"])
+
+    def test_signing_still_counts_as_an_action(self):
+        for verb in ("signs", "signed", "signing"):
+            with self.subTest(verb=verb):
+                record = classify(title=f"Karnataka government {verb} AI agreement", description="")
+                self.assertTrue(record["included"], record["exclusion_reasons"])
+
+    def test_plural_government_terms_count_as_government(self):
+        record = classify(title="Karnataka and Kerala governments sign AI pact", description="",
+                          body_text="")
+        self.assertTrue(record["classification_signals"]["government"])
+        record = classify(title="Karnataka unveils AI guidelines for departments", description="")
+        self.assertTrue(record["classification_signals"]["government"])
 
 
 class EnrichmentTests(unittest.TestCase):

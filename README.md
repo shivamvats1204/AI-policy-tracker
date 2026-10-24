@@ -38,6 +38,14 @@ and AI-based public services can qualify as government deployments; private
 funding stories, related-story blocks, and explicitly negated launches remain
 excluded. These rules produce review candidates, not verified policy facts.
 
+Events are limited to Karnataka, Telangana, Tamil Nadu, Maharashtra and Uttar
+Pradesh by default. Turn on **Update data → Include all Indian states** in the
+dashboard, or pass `--all-states` to `python -m src.pipeline` or
+`python -m src.enrich`, to keep events from every Indian state; the dataset's
+scope is shown under the headline metrics. The short abbreviations "MP" and "AP"
+only name a state in context (for example "MP government"), because they
+usually mean Member of Parliament or Associated Press.
+
 The default configuration is `src/sources.json`: 21 real source URLs covering
 Karnataka, Telangana, Tamil Nadu, Maharashtra, and Uttar Pradesh. It combines
 five Google News AI-policy searches, eight Indian Express RSS feeds, five
