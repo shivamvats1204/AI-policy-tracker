@@ -1,0 +1,57 @@
+[
+  {
+    "event_id": "eaf71536363070b83935",
+    "article_id": "3bfdc0680970134495d5",
+    "source_name": "Indian Express Bangalore",
+    "source_url": "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/",
+    "published_at_raw": "2026-10-01T20:03:01+05:30",
+    "raw_snapshot": "snapshots/0ead7cad0de41a2758f6eaf2f78cfae297796eede42461e3eba9620531d27413.bin",
+    "rss_snapshot": "snapshots/2a8a0fecd87b5267fc52dafa479db4031ce2461abdf65e46e043aea15462b429.bin",
+    "feed_source_url": "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/",
+    "enrichment_status": "fetched"
+  },
+  {
+    "event_id": "17ae6b3529f869ef29a1",
+    "article_id": "ad9a4156b2282d7364ec",
+    "source_name": "Telangana Today AI Mission",
+    "source_url": "https://telanganatoday.com/t-aim-launches-mobility-ai-grand-challenge",
+    "published_at_raw": "2022-08-27 00:00:46 +05:30",
+    "raw_snapshot": "snapshots/9894d9821687bf0385d8a88ac3f62f339080b72dff3be74896936fbd52913ad4.bin",
+    "rss_snapshot": "",
+    "feed_source_url": "",
+    "enrichment_status": ""
+  },
+  {
+    "event_id": "0b5c49907e2dc14c89cd",
+    "article_id": "9de2b68ba567acb5b095",
+    "source_name": "Telangana Today AI Mission",
+    "source_url": "https://telanganatoday.com/telangana-ai-mission-wells-fargo-launch-academic-grand-challenge",
+    "published_at_raw": "2022-08-17 19:15:22 +05:30",
+    "raw_snapshot": "snapshots/b4da8006bec48809a1b43823a6a953f9bb9034e83986541487f92f644cce280a.bin",
+    "rss_snapshot": "",
+    "feed_source_url": "",
+    "enrichment_status": ""
+  },
+  {
+    "event_id": "03b463123c58688266fd",
+    "article_id": "7c01f9390117815b1398",
+    "source_name": "Telangana Today AI Mission",
+    "source_url": "https://telanganatoday.com/telangana-government-launches-ai-based-skill-enhancement-platform-for-iiit-basara-students",
+    "published_at_raw": "2023-04-15 21:45:20 +05:30",
+    "raw_snapshot": "snapshots/81e39cb1dbd4f56cf587f20a8de02e90c12409829ce6ed6d1406f94f97e5a781.bin",
+    "rss_snapshot": "",
+    "feed_source_url": "",
+    "enrichment_status": ""
+  },
+  {
+    "event_id": "38a429831ff70b96445c",
+    "article_id": "9518f2b08785e8804668",
+    "source_name": "DT Next Tamil Nadu",
+    "source_url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-ai-enabled-e-sevai-20-to-bring-1000-services-under-one-platform",
+    "published_at_raw": "2026-10-24T11:51:08+05:30",
+    "raw_snapshot": "snapshots/184c697678cb7ce683628d64a9329064602361ae2f2b7a1c7f0d2e71f81b0ca0.bin",
+    "rss_snapshot": "",
+    "feed_source_url": "",
+    "enrichment_status": ""
+  }
+]

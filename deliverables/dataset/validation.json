@@ -1,0 +1,27 @@
+{
+  "valid": true,
+  "event_count": 5,
+  "errors": [],
+  "warnings": [
+    {
+      "event_id": "eaf71536363070b83935",
+      "message": "Rule-generated candidate requires human review"
+    },
+    {
+      "event_id": "17ae6b3529f869ef29a1",
+      "message": "Rule-generated candidate requires human review"
+    },
+    {
+      "event_id": "0b5c49907e2dc14c89cd",
+      "message": "Rule-generated candidate requires human review"
+    },
+    {
+      "event_id": "03b463123c58688266fd",
+      "message": "Rule-generated candidate requires human review"
+    },
+    {
+      "event_id": "38a429831ff70b96445c",
+      "message": "Rule-generated candidate requires human review"
+    }
+  ]
+}

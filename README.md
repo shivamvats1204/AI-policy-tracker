@@ -85,3 +85,41 @@ Deduplication merges matching headlines with the same state, category, status,
 and known day/date basis, retaining each article's source link. Paraphrased
 headlines, conflicting numbers, and uncertain dates remain separate candidates
 for human review.
+
+## Submission contents
+
+| Item | Location |
+| --- | --- |
+| Dataset (CSV, one row per event) | `deliverables/dataset/ai_policy_events.csv` (JSON exports and exclusions alongside) |
+| Live webpage (static, single file) | `docs/index.html`, hosted at: **add your URL here** |
+| Interactive dashboard | `python -m streamlit run app.py` |
+| Rationale note | `deliverables/RATIONALE.md` |
+| AI declaration | `deliverables/AI_USAGE.md` |
+
+Rebuild the dataset and page from saved articles:
+
+```sh
+python -m src.pipeline --input data/raw/articles.jsonl --output deliverables/dataset
+python -m src.build_site --input deliverables/dataset --output docs/index.html
+```
+
+`docs/index.html` is one file with the data embedded. Upload it to tiiny.host or
+Netlify Drop, or enable GitHub Pages from the `/docs` folder.
+
+## Assumptions and known holes
+
+- **Thin yield.** The submitted dataset has 5 events from 1,475 unique articles.
+  Most articles are general city news or national tech news, not state policy.
+- **Dead sources.** The 5 Google News queries are disallowed by robots.txt, Karnataka
+  EITBT fails TLS validation, Tamil Nadu IT returns 403, and four listings yield no
+  links. None were bypassed, so Maharashtra and Uttar Pradesh have no events.
+- **Scope.** Five states by default (`src/settings.py`). Use the dashboard toggle or
+  `--all-states` for any state. Union territories are not recognised.
+- **Dates.** Mostly publication dates, not event dates. Three Telangana events come
+  from 2022-23 articles on a tag page.
+- **Classification.** Keyword rules. Categories and statuses are suggestions, and an
+  article with no explicit state name is excluded even if a city is named.
+- **Deduplication.** Only identical normalized headlines merge. Paraphrased coverage
+  of one announcement stays as separate candidates.
+- **PDFs and JavaScript pages** are not read, so official listings are largely unused.
+- **Review.** Every event is `needs_review`; none is manually verified.

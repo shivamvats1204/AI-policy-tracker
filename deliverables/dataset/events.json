@@ -1,0 +1,460 @@
+[
+  {
+    "title": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation",
+    "source_url": "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/",
+    "canonical_url": "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/",
+    "source_name": "Indian Express Bangalore",
+    "published_at_raw": "2026-10-01T20:03:01+05:30",
+    "date_origin": "publication_metadata",
+    "modified_at_raw": "2026-10-01T20:03:03+05:30",
+    "description": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul.",
+    "body_text": "The Karnataka government has constituted three expert committees to examine how the state police department delivers services, how it should be modernised to address emerging forms of crime and technology, and how its cadre and recruitment system should be structured to meet future requirements.\nThe committees, headed by retired directors-general of police (DGPs) R K Dutta, M N Reddy and Kamal Pant, have been given two months to submit their recommendations.\nOne committee will focus on the police-public interface and the functioning of police services, while the other panel will prepare a roadmap for modernising the department, including artificial intelligence (AI) , cyber capabilities, emergency response and the 112 system, forensic infrastructure, communications and computerisation. The third committee will examine the department’s sanctioned strength, cadre structure, recruitment rules, creation and reclassification of posts and career progression.",
+    "raw_snapshot": "snapshots/0ead7cad0de41a2758f6eaf2f78cfae297796eede42461e3eba9620531d27413.bin",
+    "article_id": "3bfdc0680970134495d5",
+    "state_candidate": "Karnataka",
+    "source_type": "rss",
+    "discovery_url": "https://indianexpress.com/section/cities/bangalore/feed/",
+    "collected_at": "2026-10-24T10:42:57.489542+00:00",
+    "review_status": "needs_review",
+    "enrichment_status": "fetched",
+    "feed_title": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation",
+    "feed_source_url": "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/",
+    "feed_published_at_raw": "Thu, 01 Oct 2026 14:33:01 +0000",
+    "rss_snapshot": "snapshots/2a8a0fecd87b5267fc52dafa479db4031ce2461abdf65e46e043aea15462b429.bin",
+    "state": "Karnataka",
+    "state_basis": "headline_description",
+    "state_evidence": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul.",
+    "date": "2026-10-01",
+    "date_precision": "day",
+    "date_basis": "publication_date",
+    "published_date": "2026-10-01",
+    "event_date": "",
+    "normalization_issues": [],
+    "included": true,
+    "classification_evidence": {
+      "ai": [
+        {
+          "field": "title",
+          "text": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation"
+        },
+        {
+          "field": "description",
+          "text": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul."
+        }
+      ],
+      "government": [
+        {
+          "field": "title",
+          "text": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation"
+        },
+        {
+          "field": "description",
+          "text": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul."
+        }
+      ],
+      "action": [
+        {
+          "field": "description",
+          "text": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul."
+        },
+        {
+          "field": "article_lead",
+          "text": "The Karnataka government has constituted three expert committees to examine how the state police department delivers services, how it should be modernised to address emerging forms of crime and technology, and how its cadre and recruitment system should be structured to meet future requirements."
+        }
+      ],
+      "category": [
+        {
+          "field": "title",
+          "text": "3 reform panels to chart Karnataka Police’s path to AI-led modernisation"
+        },
+        {
+          "field": "description",
+          "text": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul."
+        }
+      ]
+    },
+    "category": "AI Task Force/Centre of Excellence",
+    "category_basis": "title",
+    "category_matches": [
+      "AI Task Force/Centre of Excellence"
+    ],
+    "article_type": "event_candidate",
+    "status": "announced",
+    "classification_signals": {
+      "ai": true,
+      "government": true,
+      "action": true,
+      "state": true
+    },
+    "exclusion_reasons": [],
+    "event_id": "eaf71536363070b83935",
+    "summary": "From incorporating artificial intelligence and upgrading 112 emergency response systems to restructuring recruitment and workload, Karnataka has set up three high-level panels to execute a major police overhaul.",
+    "source_count": 1,
+    "source_urls": [
+      "https://indianexpress.com/article/cities/bangalore/karnataka-police-ai-led-modernisation-reform-committees-10902761/"
+    ]
+  },
+  {
+    "title": "T-AIM launches Mobility AI Grand Challenge",
+    "published_at_raw": "2022-08-27 00:00:46 +05:30",
+    "date_origin": "publication_metadata",
+    "modified_at_raw": "2022-08-27 00:00:46 +05:30",
+    "source_url": "https://telanganatoday.com/t-aim-launches-mobility-ai-grand-challenge",
+    "canonical_url": "https://telanganatoday.com/t-aim-launches-mobility-ai-grand-challenge",
+    "description": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds.",
+    "body_text": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds.\nHyderabad: The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. This is being taken up in partnership with Capgemini. The two concluded a similar challenge for the Forest Department earlier this month. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds. Through the solutions developed using artificial intelligence, GHMC officials will get additional insights to undertake targeted repair works in Hyderabad. Also Read Here are the speed limits for different roads in Hyderabad The challenge is open for applications. Innovators will be selected based on their approach note, and the shortlisted innovators will get four weeks to develop a Proof of Concept. The winning innovator will receive mentoring support and an award of up to Rs 20 lakh towards implementation of a potential pilot project with GHMC. “Governments and innovators should increasingly collaborate to solve social problems through open innovation. I am confident that this initiative of T-AIM will help GHMC use AI-based solutions to improve road safety,” said IT Principal Secretary Jayesh Ranjan. “We are using an open innovation ecosystem to select, advocate and support tech-enabled solutions to make a difference to people. Everyone can relate to pothole severity across India. The identification of viable solutions through the Mobility AI Grand Challenge will contribute to road safety,” said Anurag Pratap, VP and CSR Leader at Capgemini India. TiHAN, India’s first autonomous navigation facility at IIT Hyderabad, and INAI-IHub Data, the applied AI research centre at IIIT-H are partners in this challenge. While TiHAN will provide intellectual support, INAI-IHub Data will provide Bodhyaan 1.0, the data capture platform. The deadline to submit approach notes for the challenge is September 16. The winner will be announced in November.\nHyderabad: The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. This is being taken up in partnership with Capgemini. The two concluded a similar challenge for the Forest Department earlier this month.\nIn this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds. Through the solutions developed using artificial intelligence, GHMC officials will get additional insights to undertake targeted repair works in Hyderabad.\nThe challenge is open for applications. Innovators will be selected based on their approach note, and the shortlisted innovators will get four weeks to develop a Proof of Concept. The winning innovator will receive mentoring support and an award of up to Rs 20 lakh towards implementation of a potential pilot project with GHMC.\n“Governments and innovators should increasingly collaborate to solve social problems through open innovation. I am confident that this initiative of T-AIM will help GHMC use AI-based solutions to improve road safety,” said IT Principal Secretary Jayesh Ranjan.\n“We are using an open innovation ecosystem to select, advocate and support tech-enabled solutions to make a difference to people. Everyone can relate to pothole severity across India. The identification of viable solutions through the Mobility AI Grand Challenge will contribute to road safety,” said Anurag Pratap, VP and CSR Leader at Capgemini India.\nTiHAN, India’s first autonomous navigation facility at IIT Hyderabad, and INAI-IHub Data, the applied AI research centre at IIIT-H are partners in this challenge. While TiHAN will provide intellectual support, INAI-IHub Data will provide Bodhyaan 1.0, the data capture platform. The deadline to submit approach notes for the challenge is September 16. The winner will be announced in November.",
+    "raw_snapshot": "snapshots/9894d9821687bf0385d8a88ac3f62f339080b72dff3be74896936fbd52913ad4.bin",
+    "article_id": "ad9a4156b2282d7364ec",
+    "state_candidate": "Telangana",
+    "source_name": "Telangana Today AI Mission",
+    "source_type": "listing",
+    "discovery_url": "https://telanganatoday.com/tag/telangana-ai-mission",
+    "collected_at": "2026-10-24T11:29:25.243670+00:00",
+    "review_status": "needs_review",
+    "state": "Telangana",
+    "state_basis": "headline_description",
+    "state_evidence": "T-AIM launches Mobility AI Grand Challenge The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds.",
+    "date": "2022-08-27",
+    "date_precision": "day",
+    "date_basis": "publication_date",
+    "published_date": "2022-08-27",
+    "event_date": "",
+    "normalization_issues": [],
+    "included": true,
+    "classification_evidence": {
+      "ai": [
+        {
+          "field": "title",
+          "text": "T-AIM launches Mobility AI Grand Challenge"
+        },
+        {
+          "field": "description",
+          "text": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds."
+        }
+      ],
+      "government": [
+        {
+          "field": "description",
+          "text": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds."
+        },
+        {
+          "field": "article_lead",
+          "text": "Hyderabad: The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. This is being taken up in partnership with Capgemini. The two concluded a similar challenge for the Forest Department earlier this month. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds. Through the solutions developed using artificial intelligence, GHMC officials will get additional insights to undertake targeted repair works in Hyderabad. Also Read Here are the speed limits for different roads in Hyderabad The challenge is open for applications. Innovators will be selected based on their approach note, and the shortlisted innovators will get four weeks to develop a Proof of Concept. The winning innovator will receive mentoring support and an award of up to Rs 20 lakh towards implementation of a potential pilot project with GHMC. “Governments and innovators should increasingly collaborate to solve social problems through open innovation. I am confident that this initiative of T-AIM will help GHMC use AI-based solutions to improve road safety,” said IT Principal Secretary Jayesh Ranjan. “We are using an open innovation ecosystem to select, advocate and support tech-enabled solutions to make a difference to people. Everyone can relate to pothole severity across India. The identification of viable solutions through the Mobility AI Grand Challenge will contribute to road"
+        }
+      ],
+      "action": [
+        {
+          "field": "title",
+          "text": "T-AIM launches Mobility AI Grand Challenge"
+        },
+        {
+          "field": "description",
+          "text": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds."
+        }
+      ],
+      "category": [
+        {
+          "field": "description",
+          "text": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds."
+        },
+        {
+          "field": "article_lead",
+          "text": "Hyderabad: The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. This is being taken up in partnership with Capgemini. The two concluded a similar challenge for the Forest Department earlier this month. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds. Through the solutions developed using artificial intelligence, GHMC officials will get additional insights to undertake targeted repair works in Hyderabad. Also Read Here are the speed limits for different roads in Hyderabad The challenge is open for applications. Innovators will be selected based on their approach note, and the shortlisted innovators will get four weeks to develop a Proof of Concept. The winning innovator will receive mentoring support and an award of up to Rs 20 lakh towards implementation of a potential pilot project with GHMC. “Governments and innovators should increasingly collaborate to solve social problems through open innovation. I am confident that this initiative of T-AIM will help GHMC use AI-based solutions to improve road safety,” said IT Principal Secretary Jayesh Ranjan. “We are using an open innovation ecosystem to select, advocate and support tech-enabled solutions to make a difference to people. Everyone can relate to pothole severity across India. The identification of viable solutions through the Mobility AI Grand Challenge will contribute to road"
+        }
+      ]
+    },
+    "category": "AI Policy/Mission",
+    "category_basis": "description",
+    "category_matches": [
+      "AI MoU/Partnership",
+      "Government AI Deployment",
+      "AI Policy/Mission"
+    ],
+    "article_type": "event_candidate",
+    "status": "launched",
+    "classification_signals": {
+      "ai": true,
+      "government": true,
+      "action": true,
+      "state": true
+    },
+    "exclusion_reasons": [],
+    "event_id": "17ae6b3529f869ef29a1",
+    "summary": "The Telangana AI Mission (T-AIM) launched the Mobility AI Grand Challenge to foster innovation for GHMC. In this challenge, GHMC aims to identify and classify pothole severity across specified routes in Hyderabad using live and archived video feeds.",
+    "source_count": 1,
+    "source_urls": [
+      "https://telanganatoday.com/t-aim-launches-mobility-ai-grand-challenge"
+    ]
+  },
+  {
+    "title": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge",
+    "published_at_raw": "2022-08-17 19:15:22 +05:30",
+    "date_origin": "publication_metadata",
+    "modified_at_raw": "2022-08-17 19:15:22 +05:30",
+    "source_url": "https://telanganatoday.com/telangana-ai-mission-wells-fargo-launch-academic-grand-challenge",
+    "canonical_url": "https://telanganatoday.com/telangana-ai-mission-wells-fargo-launch-academic-grand-challenge",
+    "description": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge",
+    "body_text": "Hyderabad: Telangana AI Mission (T-AIM) together with financial services company Wells Fargo launched the ‘Academic Grand Challenge’ to foster innovation in the banking sector. T-AIM is an initiative of the Government of Telangana, powered by Nasscom. In this challenge, student teams from India are expected to build solutions on two fronts. One involves building a […]\nHyderabad: Telangana AI Mission (T-AIM) together with financial services company Wells Fargo launched the ‘Academic Grand Challenge’ to foster innovation in the banking sector. T-AIM is an initiative of the Government of Telangana, powered by Nasscom. In this challenge, student teams from India are expected to build solutions on two fronts. One involves building a futuristic, pure digital bank that integrates modern technologies to enable banking wherever and whenever. The other requires building a predictive analytics model to estimate financial markets performance during this year. The winning team will receive prize money and merchandise worth Rs 5 lakh. Registration details on taim-gc.in/academic . Teams will be selected based on their approach note and last date to send that is September 16. Shortlisted teams will get eight weeks to present a Proof of Concept. The submissions will be judged based on approach, technique and result. The winner will be announced in November. “It is encouraging to see the private industry encourage young talent through this initiative. Modern technologies, including artificial intelligence, have the ability to transform various sectors including banking,” said IT and Industries Principal Secretary Jayesh Ranjan. “Students are one of our best sources of original ideas. We hope that the Academic Grand Challenge will give students an opportunity to innovate solutions,” said Arindam Banerrji, EVP and Managing Director, Wells Fargo India and Philippines.\nHyderabad: Telangana AI Mission (T-AIM) together with financial services company Wells Fargo launched the ‘Academic Grand Challenge’ to foster innovation in the banking sector. T-AIM is an initiative of the Government of Telangana, powered by Nasscom.\nIn this challenge, student teams from India are expected to build solutions on two fronts. One involves building a futuristic, pure digital bank that integrates modern technologies to enable banking wherever and whenever. The other requires building a predictive analytics model to estimate financial markets performance during this year.\nThe winning team will receive prize money and merchandise worth Rs 5 lakh. Registration details on taim-gc.in/academic . Teams will be selected based on their approach note and last date to send that is September 16. Shortlisted teams will get eight weeks to present a Proof of Concept. The submissions will be judged based on approach, technique and result. The winner will be announced in November.\n“It is encouraging to see the private industry encourage young talent through this initiative. Modern technologies, including artificial intelligence, have the ability to transform various sectors including banking,” said IT and Industries Principal Secretary Jayesh Ranjan.\n“Students are one of our best sources of original ideas. We hope that the Academic Grand Challenge will give students an opportunity to innovate solutions,” said Arindam Banerrji, EVP and Managing Director, Wells Fargo India and Philippines.",
+    "raw_snapshot": "snapshots/b4da8006bec48809a1b43823a6a953f9bb9034e83986541487f92f644cce280a.bin",
+    "article_id": "9de2b68ba567acb5b095",
+    "state_candidate": "Telangana",
+    "source_name": "Telangana Today AI Mission",
+    "source_type": "listing",
+    "discovery_url": "https://telanganatoday.com/tag/telangana-ai-mission",
+    "collected_at": "2026-10-24T11:29:25.243691+00:00",
+    "review_status": "needs_review",
+    "state": "Telangana",
+    "state_basis": "headline_description",
+    "state_evidence": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge Telangana AI Mission, Wells Fargo launch Academic Grand Challenge",
+    "date": "2022-08-17",
+    "date_precision": "day",
+    "date_basis": "publication_date",
+    "published_date": "2022-08-17",
+    "event_date": "",
+    "normalization_issues": [],
+    "included": true,
+    "classification_evidence": {
+      "ai": [
+        {
+          "field": "title",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        },
+        {
+          "field": "description",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        }
+      ],
+      "government": [
+        {
+          "field": "article_lead",
+          "text": "Hyderabad: Telangana AI Mission (T-AIM) together with financial services company Wells Fargo launched the ‘Academic Grand Challenge’ to foster innovation in the banking sector. T-AIM is an initiative of the Government of Telangana, powered by Nasscom. In this challenge, student teams from India are expected to build solutions on two fronts. One involves building a […]"
+        },
+        {
+          "field": "article_lead",
+          "text": "Hyderabad: Telangana AI Mission (T-AIM) together with financial services company Wells Fargo launched the ‘Academic Grand Challenge’ to foster innovation in the banking sector. T-AIM is an initiative of the Government of Telangana, powered by Nasscom. In this challenge, student teams from India are expected to build solutions on two fronts. One involves building a futuristic, pure digital bank that integrates modern technologies to enable banking wherever and whenever. The other requires building a predictive analytics model to estimate financial markets performance during this year. The winning team will receive prize money and merchandise worth Rs 5 lakh. Registration details on taim-gc.in/academic . Teams will be selected based on their approach note and last date to send that is September 16. Shortlisted teams will get eight weeks to present a Proof of Concept. The submissions will be judged based on approach, technique and result. The winner will be announced in November. “It is encouraging to see the private industry encourage young talent through this initiative. Modern technologies, including artificial intelligence, have the ability to transform various sectors including banking,” said IT and Industries Principal Secretary Jayesh Ranjan. “Students are one of our best sources of original ideas. We hope that the Academic Grand Challenge will give students an opportunity to innovate solutions,” said Arindam Banerrji, EVP and Managing Director, Wells Fargo India and Phil"
+        }
+      ],
+      "action": [
+        {
+          "field": "title",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        },
+        {
+          "field": "description",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        }
+      ],
+      "category": [
+        {
+          "field": "title",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        },
+        {
+          "field": "description",
+          "text": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge"
+        }
+      ]
+    },
+    "category": "AI Policy/Mission",
+    "category_basis": "title",
+    "category_matches": [
+      "AI Policy/Mission"
+    ],
+    "article_type": "event_candidate",
+    "status": "launched",
+    "classification_signals": {
+      "ai": true,
+      "government": true,
+      "action": true,
+      "state": true
+    },
+    "exclusion_reasons": [],
+    "event_id": "0b5c49907e2dc14c89cd",
+    "summary": "Telangana AI Mission, Wells Fargo launch Academic Grand Challenge",
+    "source_count": 1,
+    "source_urls": [
+      "https://telanganatoday.com/telangana-ai-mission-wells-fargo-launch-academic-grand-challenge"
+    ]
+  },
+  {
+    "title": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students",
+    "published_at_raw": "2023-04-15 21:45:20 +05:30",
+    "date_origin": "publication_metadata",
+    "modified_at_raw": "2023-04-15 21:45:46 +05:30",
+    "source_url": "https://telanganatoday.com/telangana-government-launches-ai-based-skill-enhancement-platform-for-iiit-basara-students",
+    "canonical_url": "https://telanganatoday.com/telangana-government-launches-ai-based-skill-enhancement-platform-for-iiit-basara-students",
+    "description": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students",
+    "body_text": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students\nHyderabad : The State government in collaboration with MyPerfectice startup, launched an AI-based skill enhancement platform for IIIT Basara students to address the challenges of engineering education. The startup is part of Telangana AI Mission (T-AIM) under its RevvUp programme. It is aimed at addressing the challenges of engineering education by providing personalized learning recommendations to students based on their knowledge gap and enhancing their cognitive and programming skills as per industry demand through coding practice and self-learning modules. Also Read RGUKT-Basar inks pact with IIIT-Hyderabad, FCRI-Mulugu T-AIM announces winners of Academic Grand Challenge To this effect, a survey covering 1,500 students in third year second semester was completed. The platform offers continuous assessment, recommended learning and performance trend analytics. With the help of technology and data insights, the platform empowers teachers and students to bring personalized learning to students. These courses are designed to develop the required proficiencies that align with industry requirements, ultimately enhancing student’s employability quotient. Telangana IT Principal Secretary Jayesh Ranjan said: “It is an excellent initiative that aligns with our vision of transforming the education system and creating a skilled workforce for the future. This platform will increase employment opportunities for students”\nHyderabad : The State government in collaboration with MyPerfectice startup, launched an AI-based skill enhancement platform for IIIT Basara students to address the challenges of engineering education.\nThe startup is part of Telangana AI Mission (T-AIM) under its RevvUp programme. It is aimed at addressing the challenges of engineering education by providing personalized learning recommendations to students based on their knowledge gap and enhancing their cognitive and programming skills as per industry demand through coding practice and self-learning modules.\nTo this effect, a survey covering 1,500 students in third year second semester was completed. The platform offers continuous assessment, recommended learning and performance trend analytics.\nWith the help of technology and data insights, the platform empowers teachers and students to bring personalized learning to students.\nThese courses are designed to develop the required proficiencies that align with industry requirements, ultimately enhancing student’s employability quotient.\nTelangana IT Principal Secretary Jayesh Ranjan said: “It is an excellent initiative that aligns with our vision of transforming the education system and creating a skilled workforce for the future. This platform will increase employment opportunities for students”",
+    "raw_snapshot": "snapshots/81e39cb1dbd4f56cf587f20a8de02e90c12409829ce6ed6d1406f94f97e5a781.bin",
+    "article_id": "7c01f9390117815b1398",
+    "state_candidate": "Telangana",
+    "source_name": "Telangana Today AI Mission",
+    "source_type": "listing",
+    "discovery_url": "https://telanganatoday.com/tag/telangana-ai-mission",
+    "collected_at": "2026-10-24T11:29:25.243534+00:00",
+    "review_status": "needs_review",
+    "state": "Telangana",
+    "state_basis": "headline_description",
+    "state_evidence": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students",
+    "date": "2023-04-15",
+    "date_precision": "day",
+    "date_basis": "publication_date",
+    "published_date": "2023-04-15",
+    "event_date": "",
+    "normalization_issues": [],
+    "included": true,
+    "classification_evidence": {
+      "ai": [
+        {
+          "field": "title",
+          "text": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students"
+        },
+        {
+          "field": "description",
+          "text": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students"
+        }
+      ],
+      "government": [
+        {
+          "field": "title",
+          "text": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students"
+        },
+        {
+          "field": "description",
+          "text": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students"
+        }
+      ],
+      "action": [
+        {
+          "field": "title",
+          "text": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students"
+        },
+        {
+          "field": "description",
+          "text": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students"
+        }
+      ],
+      "category": [
+        {
+          "field": "title",
+          "text": "Telangana government launches AI-based skill enhancement platform for IIIT-Basara students"
+        },
+        {
+          "field": "description",
+          "text": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students"
+        }
+      ]
+    },
+    "category": "Government AI Deployment",
+    "category_basis": "title",
+    "category_matches": [
+      "Government AI Deployment",
+      "AI Policy/Mission"
+    ],
+    "article_type": "event_candidate",
+    "status": "launched",
+    "classification_signals": {
+      "ai": true,
+      "government": true,
+      "action": true,
+      "state": true
+    },
+    "exclusion_reasons": [],
+    "event_id": "03b463123c58688266fd",
+    "summary": "State government in collaboration with MyPerfectice launched an AI-based skill enhancement platform for IIIT Basara students",
+    "source_count": 1,
+    "source_urls": [
+      "https://telanganatoday.com/telangana-government-launches-ai-based-skill-enhancement-platform-for-iiit-basara-students"
+    ]
+  },
+  {
+    "title": "Tamil Nadu: AI-enabled e-Sevai 2.0 to bring 1,000 services under one platform",
+    "published_at_raw": "2026-10-24T11:51:08+05:30",
+    "date_origin": "publication_metadata",
+    "modified_at_raw": "2026-10-24T11:51:06+05:30",
+    "source_url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-ai-enabled-e-sevai-20-to-bring-1000-services-under-one-platform",
+    "canonical_url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-ai-enabled-e-sevai-20-to-bring-1000-services-under-one-platform",
+    "description": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications.",
+    "body_text": "CHENNAI: Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications..The existing e-Sevai platform provides 275 services across 38 departments through 25,277 centres. It handles an average of 50,000 to 60,000 requests a day, with demand reaching 80,000 on peak days. The proposed platform is designed to accommodate an average of 60,000 to 1.2 lakh requests a day, with peak demand of up to 1.5 lakh, supporting at least 50,000 concurrent users. Named as Vetri Tamil Nadu Integrated e-Sevai 2.0 Platform,  the Tamil Nadu e-Governance Agency (TNeGA) issued an Expression of Interest (EOI) inviting technology providers to propose solutions for a common platform to manage applications, approvals, documents, payments and certificates across government departments.The platform is also intended to support a “No Application” service delivery model, under which authorised government databases would be used to identify eligible beneficiaries and pre-fill application details. Where service rules permit, eligible citizens could receive services without submitting a separate application. .The platform is expected to connect around 15 departmental portals and 18 State and national digital systems. These include Aadhaar-based authentication, e-Sign, DigiLocker and payment services, as well as government databases. TNeGA estimates that around 110 terabytes of data, including databases and supporting documents from the existing e-Sevai and e-District systems, would have to be migrated.The existing e-Sevai centre network is expected to remain part of the service-delivery ecosystem. The proposed platform will have mobile applications, messaging services, call centres and IVRS, alongside other digital government platforms.A substantial part of the transition will involve migrating data from the existing e-Sevai and e-District systems including databases and supporting documents, which would have to be transferred to the new platform. .The proposed AI tools include a conversational interface in Tamil and English to help users find services, document-processing capabilities and a workbench to assist government officers in handling applications. AI is also proposed for classifying grievances, routing them to the appropriate authorities and identifying duplicate complaints. The AI system would operate within TNeGA’s environment, with citizen data not leaving that environment. The proposed platform is to run on government-provided infrastructure rather than depend on a vendor-hosted cloud service to provide seamless service.",
+    "raw_snapshot": "snapshots/184c697678cb7ce683628d64a9329064602361ae2f2b7a1c7f0d2e71f81b0ca0.bin",
+    "article_id": "9518f2b08785e8804668",
+    "state_candidate": "Tamil Nadu",
+    "source_name": "DT Next Tamil Nadu",
+    "source_type": "listing",
+    "discovery_url": "https://www.dtnext.in/news/tamilnadu",
+    "collected_at": "2026-10-24T11:30:21.589101+00:00",
+    "review_status": "needs_review",
+    "state": "Tamil Nadu",
+    "state_basis": "headline_description",
+    "state_evidence": "Tamil Nadu: AI-enabled e-Sevai 2.0 to bring 1,000 services under one platform Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications.",
+    "date": "2026-10-24",
+    "date_precision": "day",
+    "date_basis": "publication_date",
+    "published_date": "2026-10-24",
+    "event_date": "",
+    "normalization_issues": [],
+    "included": true,
+    "classification_evidence": {
+      "ai": [
+        {
+          "field": "title",
+          "text": "Tamil Nadu: AI-enabled e-Sevai 2.0 to bring 1,000 services under one platform"
+        },
+        {
+          "field": "description",
+          "text": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications."
+        }
+      ],
+      "government": [
+        {
+          "field": "description",
+          "text": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications."
+        },
+        {
+          "field": "article_lead",
+          "text": "CHENNAI: Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications..The existing e-Sevai platform provides 275 services across 38 departments through 25,277 centres. It handles an average of 50,000 to 60,000 requests a day, with demand reaching 80,000 on peak days. The proposed platform is designed to accommodate an average of 60,000 to 1.2 lakh requests a day, with peak demand of up to 1.5 lakh, supporting at least 50,000 concurrent users. Named as Vetri Tamil Nadu Integrated e-Sevai 2.0 Platform, the Tamil Nadu e-Governance Agency (TNeGA) issued an Expression of Interest (EOI) inviting technology providers to propose solutions for a common platform to manage applications, approvals, documents, payments and certificates across government departments.The platform is also intended to support a “No Application” service delivery model, under which authorised government databases would be used to identify eligible beneficiaries and pre-fill application details. Where service rules permit, eligible citizens could receive services without submitting a separate application. .The platform is expected to connect around 15 departmental portals and 18 State and national digital systems. These include Aadhaar-based au"
+        }
+      ],
+      "action": [
+        {
+          "field": "description",
+          "text": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications."
+        },
+        {
+          "field": "article_lead",
+          "text": "CHENNAI: Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications..The existing e-Sevai platform provides 275 services across 38 departments through 25,277 centres. It handles an average of 50,000 to 60,000 requests a day, with demand reaching 80,000 on peak days. The proposed platform is designed to accommodate an average of 60,000 to 1.2 lakh requests a day, with peak demand of up to 1.5 lakh, supporting at least 50,000 concurrent users. Named as Vetri Tamil Nadu Integrated e-Sevai 2.0 Platform, the Tamil Nadu e-Governance Agency (TNeGA) issued an Expression of Interest (EOI) inviting technology providers to propose solutions for a common platform to manage applications, approvals, documents, payments and certificates across government departments.The platform is also intended to support a “No Application” service delivery model, under which authorised government databases would be used to identify eligible beneficiaries and pre-fill application details. Where service rules permit, eligible citizens could receive services without submitting a separate application. .The platform is expected to connect around 15 departmental portals and 18 State and national digital systems. These include Aadhaar-based au"
+        }
+      ],
+      "category": [
+        {
+          "field": "title",
+          "text": "Tamil Nadu: AI-enabled e-Sevai 2.0 to bring 1,000 services under one platform"
+        },
+        {
+          "field": "description",
+          "text": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications."
+        }
+      ]
+    },
+    "category": "Government AI Deployment",
+    "category_basis": "title",
+    "category_matches": [
+      "Government AI Deployment"
+    ],
+    "article_type": "event_candidate",
+    "status": "proposed",
+    "classification_signals": {
+      "ai": true,
+      "government": true,
+      "action": true,
+      "state": true
+    },
+    "exclusion_reasons": [],
+    "event_id": "38a429831ff70b96445c",
+    "summary": "Tamil Nadu’s proposed e-Sevai 2.0 platform is being designed to use artificial intelligence (AI) and integrate up to 1,000 government services, compared with the 275 available on the existing platform. The proposed system is also intended to help eligible citizens access certain services without having to submit fresh applications.",
+    "source_count": 1,
+    "source_urls": [
+      "https://www.dtnext.in/news/tamilnadu/tamil-nadu-ai-enabled-e-sevai-20-to-bring-1000-services-under-one-platform"
+    ]
+  }
+]
