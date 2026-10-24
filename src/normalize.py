@@ -6,6 +6,11 @@ import re
 from datetime import date, datetime
 from email.utils import parsedate_to_datetime
 
+if __package__:
+    from .evidence import context_parts
+else:
+    from evidence import context_parts
+
 
 STATES = (
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
@@ -62,7 +67,7 @@ def normalize_date(value: str) -> dict:
             return {**result, "value": raw, "precision": "month"}
         if re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
             parsed = date.fromisoformat(raw)
-        elif re.match(r"^\d{4}-\d{2}-\d{2}T", raw):
+        elif re.match(r"^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}", raw):
             parsed = datetime.fromisoformat(raw.replace("Z", "+00:00")).date()
         elif re.fullmatch(r"\d{1,2}[/.-]\d{1,2}[/.-]\d{4}", raw):
             first, second, year = map(int, re.split(r"[/.-]", raw))
@@ -90,6 +95,13 @@ def normalize_article(article: dict) -> dict:
     record = dict(article)
     context = " ".join(str(article.get(k) or "") for k in ("title", "description"))
     states = detect_states(context)
+    state_basis = "headline_description" if states else "unknown"
+    if not states:
+        lead = " ".join(text for field, text in context_parts(article) if field == "article_lead")
+        states = detect_states(lead)
+        if states:
+            context = lead
+            state_basis = "article_lead"
     publication = normalize_date(article.get("published_at_raw", ""))
     event = normalize_date(article.get("event_date_raw", ""))
     # An explicit event date must have an evidence excerpt supplied by an extractor/reviewer.
@@ -106,6 +118,8 @@ def normalize_article(article: dict) -> dict:
     if article.get("event_date_raw") and not use_event:
         issues.append("unsupported_event_date")
     record.update({"state": states[0] if len(states) == 1 else "",
+                   "state_basis": state_basis,
+                   "state_evidence": context[:2000] if len(states) == 1 else "",
                    "state_candidate": normalize_state(article.get("state_candidate", "")),
                    "date": chosen["value"], "date_precision": chosen["precision"],
                    "date_basis": basis, "published_date": publication["value"],

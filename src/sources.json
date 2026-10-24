@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Telangana Today AI Mission",
+    "state": "Telangana",
+    "kind": "listing",
+    "url": "https://telanganatoday.com/tag/telangana-ai-mission",
+    "selector": "h2 a[href], h3 a[href]"
+  },
+  {
+    "name": "Google News - Karnataka AI policy",
+    "state": "Karnataka",
+    "kind": "rss",
+    "url": "https://news.google.com/rss/search?q=%28%22artificial+intelligence%22+OR+%22AI+policy%22+OR+%22AI+mission%22+OR+GenAI%29+%28Karnataka+OR+Bengaluru%29+%28government+OR+policy+OR+mission+OR+%22task+force%22+OR+%22centre+of+excellence%22+OR+MoU+OR+budget+OR+governance%29&hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },
+  {
+    "name": "Google News - Telangana AI policy",
+    "state": "Telangana",
+    "kind": "rss",
+    "url": "https://news.google.com/rss/search?q=%28%22artificial+intelligence%22+OR+%22AI+policy%22+OR+%22AI+mission%22+OR+GenAI%29+%28Telangana+OR+Hyderabad%29+%28government+OR+policy+OR+mission+OR+%22task+force%22+OR+%22centre+of+excellence%22+OR+MoU+OR+budget+OR+governance%29&hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },
+  {
+    "name": "Google News - Tamil Nadu AI policy",
+    "state": "Tamil Nadu",
+    "kind": "rss",
+    "url": "https://news.google.com/rss/search?q=%28%22artificial+intelligence%22+OR+%22AI+policy%22+OR+%22AI+mission%22+OR+GenAI%29+%28%22Tamil+Nadu%22+OR+Chennai%29+%28government+OR+policy+OR+mission+OR+%22task+force%22+OR+%22centre+of+excellence%22+OR+MoU+OR+budget+OR+governance%29&hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },
+  {
+    "name": "Google News - Maharashtra AI policy",
+    "state": "Maharashtra",
+    "kind": "rss",
+    "url": "https://news.google.com/rss/search?q=%28%22artificial+intelligence%22+OR+%22AI+policy%22+OR+%22AI+mission%22+OR+GenAI%29+%28Maharashtra+OR+Mumbai+OR+Pune+OR+Nagpur%29+%28government+OR+policy+OR+mission+OR+%22task+force%22+OR+%22centre+of+excellence%22+OR+MoU+OR+budget+OR+governance%29&hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },
+  {
+    "name": "Google News - Uttar Pradesh AI policy",
+    "state": "Uttar Pradesh",
+    "kind": "rss",
+    "url": "https://news.google.com/rss/search?q=%28%22artificial+intelligence%22+OR+%22AI+policy%22+OR+%22AI+mission%22+OR+GenAI%29+%28%22Uttar+Pradesh%22+OR+Lucknow+OR+Noida%29+%28government+OR+policy+OR+mission+OR+%22task+force%22+OR+%22centre+of+excellence%22+OR+MoU+OR+budget+OR+governance%29&hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },
+  {
+    "name": "Indian Express Bangalore",
+    "state": "Karnataka",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/bangalore/feed/"
+  },
+  {
+    "name": "Indian Express Hyderabad",
+    "state": "Telangana",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/hyderabad/feed/"
+  },
+  {
+    "name": "Indian Express Chennai",
+    "state": "Tamil Nadu",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/chennai/feed/"
+  },
+  {
+    "name": "Indian Express Mumbai",
+    "state": "Maharashtra",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/mumbai/feed/"
+  },
+  {
+    "name": "Indian Express Pune",
+    "state": "Maharashtra",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/pune/feed/"
+  },
+  {
+    "name": "Indian Express Nagpur",
+    "state": "Maharashtra",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/nagpur/feed/"
+  },
+  {
+    "name": "Indian Express Lucknow",
+    "state": "Uttar Pradesh",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/cities/lucknow/feed/"
+  },
+  {
+    "name": "Indian Express Artificial Intelligence",
+    "kind": "rss",
+    "url": "https://indianexpress.com/section/technology/artificial-intelligence/feed/"
+  },
+  {
+    "name": "Karnataka EITBT Government Orders",
+    "state": "Karnataka",
+    "kind": "listing",
+    "url": "https://eitbt.karnataka.gov.in/137/government-orders/en",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "Startup Telangana Government Policies",
+    "state": "Telangana",
+    "kind": "listing",
+    "url": "https://startup.telangana.gov.in/government-policies/",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "Tamil Nadu IT Department Press Releases",
+    "state": "Tamil Nadu",
+    "kind": "listing",
+    "url": "https://it.tn.gov.in/en/Press_Release",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "Maharashtra IT and AI Policies",
+    "state": "Maharashtra",
+    "kind": "listing",
+    "url": "https://it.maharashtra.gov.in/document-category/policies-guidelines/",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "Invest UP Press Releases",
+    "state": "Uttar Pradesh",
+    "kind": "listing",
+    "url": "https://invest.up.gov.in/press-releases/",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "The New Indian Express Karnataka",
+    "state": "Karnataka",
+    "kind": "listing",
+    "url": "https://www.newindianexpress.com/states/karnataka",
+    "selector": "main a[href], article a[href], table a[href], .views-row a[href], .entry-content a[href]"
+  },
+  {
+    "name": "DT Next Tamil Nadu",
+    "state": "Tamil Nadu",
+    "kind": "listing",
+    "url": "https://www.dtnext.in/news/tamilnadu",
+    "selector": ".arr--headline a[href], main a[href], article a[href]"
+  }
+]

@@ -6,6 +6,7 @@ Dependency: beautifulsoup4. Called by collect.py; also usable independently.
 from __future__ import annotations
 
 import json
+from html import unescape
 import re
 import xml.etree.ElementTree as ET
 from urllib.parse import urljoin, urlsplit, urlunsplit
@@ -17,7 +18,7 @@ AI_PATTERN = re.compile(r"\b(?:AI|GenAI|artificial intelligence|machine learning
 
 
 def clean(value: object) -> str:
-    return re.sub(r"\s+", " ", str(value or "")).strip()
+    return re.sub(r"\s+", " ", unescape(str(value or ""))).strip()
 
 
 def web_url(value: str, base: str = "") -> str:
@@ -84,13 +85,16 @@ def extract_article(html: str | bytes, final_url: str) -> dict:
     description = (clean(structured.get("description"))
                    or meta('meta[property="og:description"]')
                    or meta('meta[name="description"]'))
-    container = soup.find("article") or soup.find("main")
+    container = (soup.select_one('[itemprop="articleBody"], #pcl-full-content, .story_details, .article-content')
+                 or soup.find("article") or soup.find("main"))
     body = ""
     if container:
-        for node in container.select("script, style, nav, footer, aside"):
+        for node in container.select("script, style, nav, footer, aside, .paywall, [hidden], [aria-hidden='true'], .related-articles"):
             node.decompose()
         body = "\n".join(clean(p.get_text(" ", strip=True))
                          for p in container.find_all("p") if clean(p.get_text()))
+    if not body and isinstance(structured.get("articleBody"), str):
+        body = structured["articleBody"].strip()
     return {
         "title": title,
         "published_at_raw": published,

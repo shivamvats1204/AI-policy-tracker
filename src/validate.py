@@ -3,9 +3,14 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-from classify import CATEGORIES, STATUSES
-from normalize import STATES, normalize_date
 from urllib.parse import urlsplit
+
+if __package__:
+    from .classify import CATEGORIES, STATUSES
+    from .normalize import STATES, normalize_date
+else:
+    from classify import CATEGORIES, STATUSES
+    from normalize import STATES, normalize_date
 
 
 def valid_url(value) -> bool:

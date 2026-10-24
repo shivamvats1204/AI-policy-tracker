@@ -1,15 +1,17 @@
 """Synthetic fixtures only: these are not authentic news records."""
 
 import json
+from copy import deepcopy
 import tempfile
 import unittest
 from pathlib import Path
 
-from classify import classify_article
-from deduplicate import deduplicate, same_event
-from normalize import detect_states, normalize_article, normalize_date, normalize_state
-from pipeline import run_pipeline
-from validate import validate_events
+from src.classify import classify_article
+from src.deduplicate import deduplicate, same_event
+from src.normalize import detect_states, normalize_article, normalize_date, normalize_state
+from src.paths import PROJECT_ROOT
+from src.pipeline import run_pipeline
+from src.validate import validate_events
 
 
 def fixture(**updates):
@@ -73,6 +75,65 @@ class ClassificationTests(unittest.TestCase):
 
 
 class DeduplicationTests(unittest.TestCase):
+    def test_empty_input(self):
+        self.assertEqual(deduplicate([]), ([], []))
+
+    def test_headline_case_and_punctuation(self):
+        self.assertTrue(same_event(process(), process(
+            title="KARNATAKA GOVERNMENT APPROVES: Bengaluru AI mission!")))
+
+    def test_distinct_projects_on_same_day_remain_separate(self):
+        self.assertFalse(same_event(process(), process(
+            title="Karnataka government approves Mysuru AI mission")))
+
+    def test_uncertain_dates_and_date_bases_remain_separate(self):
+        for raw in ("", "2026", "2026-10"):
+            with self.subTest(raw=raw):
+                self.assertFalse(same_event(process(published_at_raw=raw), process(published_at_raw=raw)))
+        self.assertFalse(same_event(process(), process(
+            event_date_raw="2026-10-01", event_date_evidence="Approved on 1 October")))
+        self.assertFalse(same_event(process(date_origin="time_element_unverified"),
+                                    process(date_origin="time_element_unverified")))
+
+    def test_conflicting_description_amounts_remain_separate(self):
+        self.assertFalse(same_event(
+            process(description="Karnataka government approved a 100 crore AI mission."),
+            process(description="Karnataka government approved a 200 crore AI mission.")))
+
+    def test_source_count_counts_urls_and_links_preserve_articles(self):
+        first = process(raw_snapshot="snapshots/first.bin")
+        second = process(article_id="a2", raw_snapshot="snapshots/second.bin")
+        events, links = deduplicate([first, second])
+        self.assertEqual(events[0]["source_count"], 1)
+        self.assertEqual(events[0]["source_urls"], [first["source_url"]])
+        self.assertEqual({link["article_id"] for link in links}, {"a1", "a2"})
+        self.assertEqual({link["raw_snapshot"] for link in links},
+                         {"snapshots/first.bin", "snapshots/second.bin"})
+        self.assertTrue(all(link["event_id"] == events[0]["event_id"] for link in links))
+
+    def test_stable_output_without_mutating_input(self):
+        articles = [process(), process(article_id="a2", source_url="https://example.net/a2")]
+        before = deepcopy(articles)
+        self.assertEqual(deduplicate(articles), deduplicate(reversed(articles)))
+        self.assertEqual(articles, before)
+        self.assertEqual(deduplicate([articles[0]])[0][0]["event_id"],
+                         deduplicate(articles)[0][0]["event_id"])
+
+    def test_missing_description_uses_title_and_requires_review(self):
+        events, _ = deduplicate([process(description="", review_status="verified")])
+        self.assertEqual(events[0]["summary"], events[0]["title"])
+        self.assertEqual(events[0]["review_status"], "needs_review")
+        self.assertTrue(validate_events(events)["valid"])
+
+    def test_excluded_records_do_not_create_events(self):
+        self.assertEqual(deduplicate([process(title="Private AI product review", description="Consumer gadget")]), ([], []))
+
+    def test_unknown_dates_get_distinct_event_ids(self):
+        events, _ = deduplicate([process(published_at_raw=""), process(published_at_raw="")])
+        self.assertEqual(len(events), 2)
+        self.assertNotEqual(events[0]["event_id"], events[1]["event_id"])
+        self.assertTrue(validate_events(events)["valid"])
+
     def test_duplicate_coverage_retains_sources(self):
         a = process()
         b = process(article_id="a2", source_url="https://example.net/coverage")
@@ -105,7 +166,7 @@ class DeduplicationTests(unittest.TestCase):
 class PipelineTests(unittest.TestCase):
     def test_offline_end_to_end(self):
         # Explicit workspace path avoids restricted system temporary directories.
-        with tempfile.TemporaryDirectory(dir=Path.cwd()) as directory:
+        with tempfile.TemporaryDirectory(dir=PROJECT_ROOT) as directory:
             root = Path(directory)
             source = root / "input.jsonl"
             articles = [fixture(), fixture(article_id="a2", source_url="https://example.net/a2"),
@@ -129,7 +190,7 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(validate_events(events)["valid"])
 
     def test_bad_json_fails_with_line_number(self):
-        with tempfile.TemporaryDirectory(dir=Path.cwd()) as directory:
+        with tempfile.TemporaryDirectory(dir=PROJECT_ROOT) as directory:
             source = Path(directory) / "bad.jsonl"
             source.write_text('{"title":', encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "line 1"):

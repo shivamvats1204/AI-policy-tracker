@@ -1,3 +1,4 @@
-# Collection and HTML extraction. Processing and tests use the standard library.
+# Collection, HTML extraction, and the Streamlit dashboard.
 requests>=2.32.3,<3
 beautifulsoup4>=4.12.3,<5
+streamlit>=1.50,<2

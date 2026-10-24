@@ -26,6 +26,7 @@ dist/
 *.egg-info/
 
 # Downloaded source snapshots
+/data
 /data/raw/snapshots/
 
 # Editors and operating systems
