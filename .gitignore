@@ -1,0 +1,39 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Test coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Build output
+build/
+dist/
+*.egg-info/
+
+# Downloaded source snapshots
+/data/raw/snapshots/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+~$*
